@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends MY_Controller {
 
 	/**
 	 * Index page for the site.
@@ -8,7 +8,8 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('layout');
+		$this->data['main_content'] = 'front/home';
+		$this->_default_view();
 	}
 
 	/**
@@ -18,7 +19,7 @@ class Home extends CI_Controller {
 	 */
 	public function search()
 	{
-		$this->load->view('layout');
+		$this->_default_view();
 	}
 }
 

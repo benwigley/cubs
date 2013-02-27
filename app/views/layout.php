@@ -30,7 +30,7 @@
 
 			<div id="content-container">
 				<div id="content" class="container">
-					<p>Hello World!</p>
+					<?php if ($main_content) $this->load->view($main_content); ?>
 				</div>
 			</div>
 
