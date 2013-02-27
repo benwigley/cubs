@@ -26,7 +26,8 @@ module.exports = function(grunt) {
 		// Removes (cleans) these folders
 		// -------------------------------------
 		clean: {
-			prod: ['scripts/', 'styles/', 'img/', 'tmp/']
+			dev: ['scripts/', 'styles/', 'img/', 'tmp/'],
+			prod: ['prod/scripts', 'prod/styles', 'prod/img']
 		},
 
 		// Copies assets from app/assets
@@ -74,7 +75,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'scripts/',
 					src: ['**'],
-					dest: 'prod/',
+					dest: 'prod/scripts',
 					filter: 'isFile'
 				}]
 			},
@@ -83,7 +84,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'styles/',
 					src: ['**'],
-					dest: 'prod/',
+					dest: 'prod/styles',
 					filter: 'isFile'
 				}]
 			},
@@ -92,7 +93,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'img/',
 					src: ['**'],
-					dest: 'prod/',
+					dest: 'prod/img',
 					filter: 'isFile'
 				}]
 			}
@@ -214,18 +215,22 @@ module.exports = function(grunt) {
 
 	// Create tasks
 	// ------------------------
+
+	// Sub-tasks
 	grunt.registerTask('styles',	['less']);
 	grunt.registerTask('scripts',	['copy:appjs', 'commonjs', 'uglify:app']);
 	grunt.registerTask('assets',	['copy:images', 'copy:css', 'copy:js']);
 
+	// Developement tasks
 	grunt.registerTask('default',	['clean', 'styles', 'scripts', 'uglify:vendor', 'assets']);
 	grunt.registerTask('b',			['default']);
+	grunt.registerTask('w',			['b', 'livereload', 'watch']);
 
+	// Production task
 	grunt.registerTask('prod',		[
-		'b', 'mincss', 'uglify:minify', 'copy:prodjs', 'copy:prodjcss', 'copy:prodimages'
+		'b', 'mincss', 'uglify:minify','clean:prod',
+		'copy:prodjs', 'copy:prodcss', 'copy:prodimages'
 	]);
 	grunt.registerTask('p',			['prod']);
-
-	grunt.registerTask('w',			['b', 'livereload', 'watch']);
 
 };

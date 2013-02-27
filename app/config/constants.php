@@ -1,5 +1,22 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Assets Folder
+|--------------------------------------------------------------------------
+|
+| Set your production assets folder here if different from dev.
+| Ensure to append a trailing slash to the folder name.
+|
+| e.g. 'prod/'
+|
+*/
+define('ASSETS_DIR', 'prod/');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes
@@ -17,6 +34,8 @@ define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0777);
+
+
 
 /*
 |--------------------------------------------------------------------------

@@ -20,6 +20,10 @@ if ( ! isset($_SERVER['APP_ENV'])) {
 	$_SERVER['APP_ENV'] = "DEVELOPMENT";
 }
 
+// IS_LOCALHOST
+// ---------------------
+$_SERVER['IS_LOCALHOST'] = ($_SERVER['SERVER_ADDR'] === "127.0.0.1" ? TRUE : FALSE);
+
 
 /*
 |--------------------------------------------------------------------------

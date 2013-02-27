@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-if ($_SERVER['SERVER_ADDR'] == "127.0.0.1")
+if ($_SERVER['IS_LOCALHOST'])
 {
 	// Development Server - localhost
 	$db['default']['hostname'] = '127.0.0.1';
