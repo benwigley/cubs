@@ -33,11 +33,10 @@ writable/
 
 # Build Folders
 # ---------------------------------
-#/js
-#/css
-#/images
+#/scripts
+#/styles
+#/img
 /tmp
-/dev
 
 # Personal Config
 # ---------------------------------
