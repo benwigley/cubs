@@ -24,6 +24,9 @@
 nbproject
 Thumbs.db
 
+# Log files
+/app/logs/*.php
+
 # Local Folders
 node_modules/
 writable/
@@ -36,5 +39,6 @@ writable/
 /tmp
 /dev
 
-# Log files
-/app/logs/*.php
+# Personal Config
+# ---------------------------------
+app/config/database.php

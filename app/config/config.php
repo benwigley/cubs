@@ -1,20 +1,41 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+ini_set('display_errors', 1);
+
+/*
+|--------------------------------------------------------------------------
+| Environment Variables
+|--------------------------------------------------------------------------
+|
+| PagodaBox sets environment variables in the $_SERVER[] array.
+|
+*/
+
+// APP_ENV
+// ---------------------
+// The APP_ENV is always set to DEVELOPMENT on the dev server.
+// APP_ENV will alredy be defined if running on PagodaBox.
+// Options: ['DEVELOPMENT', 'PRODUCTION']
+if ( ! isset($_SERVER['APP_ENV'])) {
+	$_SERVER['APP_ENV'] = "DEVELOPMENT";
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
-| URL to your CodeIgniter root. Typically this will be your base URL,
-| WITH a trailing slash:
-|
-|	http://example.com/
-|
-| If this is not set then CodeIgniter will guess the protocol, domain and
-| path to your installation.
+| Configure the base_url dynamically.
 |
 */
-$config['base_url']	= '';
+$config['base_url'] = 'http';
+if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") $config['base_url'] .= "s";
+$config['base_url'] .= "://";
+if ($_SERVER["SERVER_PORT"] != "80") $config['base_url'] .= $_SERVER["HTTP_HOST"].":".$_SERVER["SERVER_PORT"];
+else $config['base_url'] .= $_SERVER["HTTP_HOST"];
+	$config["base_url"] .= "/";
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +47,8 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
+
 
 /*
 |--------------------------------------------------------------------------
@@ -180,7 +202,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------
