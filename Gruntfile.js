@@ -5,12 +5,13 @@ module.exports = function(grunt) {
 		pkg: grunt.file.readJSON('package.json'),
 
 		/*
-			Project Files
-		
-			Put your Javascript files in: vendor/scripts
-		
+			Put vendor Javascript files in: vendor/scripts
+
 			If they need to be loaded in a specific order, put them in: vendor/scripts/before
 			and then assign it's order below.
+
+			Put libraries that don't need a specif order in: vendor/scripts/libs
+			and they will concatenated in alphabetical order.
 		*/
 		vendor: {
 			scripts: {
@@ -23,13 +24,13 @@ module.exports = function(grunt) {
 		},
 
 		// Removes (cleans) these folders
-		// ------------------------------
+		// -------------------------------------
 		clean: {
 			prod: ['scripts/', 'styles/', 'img/', 'tmp/']
 		},
 
 		// Copies assets from app/assets
-		// ------------------------------
+		// -------------------------------------
 		copy: {
 			appjs: {
 				files: [{
@@ -69,6 +70,9 @@ module.exports = function(grunt) {
 			}
 		},
 
+
+		// Compile all LESS files.
+		// -------------------------------------
 		less: {
 			prod: {
 				options: {
@@ -82,7 +86,7 @@ module.exports = function(grunt) {
 		},
 
 		// Minifies app.css (prod only)
-		// ------------------------------
+		// -------------------------------------
 		mincss: {
 			prod: {
 				files: [{
@@ -91,6 +95,9 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Allows the use of require() in 
+		// application js files.
+		// -------------------------------------
 		commonjs: {
 			modules: {
 				excludeBase: 'tmp/js/',
@@ -99,6 +106,9 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Concats js files.
+		// Optional prod task for minifying.
+		// -------------------------------------
 		uglify: {
 			options: {
 				beautify: true,
@@ -129,6 +139,9 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// If you have livereload plugin the
+		// browser can refresh on file change.
+		// -------------------------------------
 		livereload: {
 			options: {
 				base: '/'
@@ -136,6 +149,9 @@ module.exports = function(grunt) {
 			files: ['styles/app.css', 'scripts/app.js']
 		},
 
+
+		// Run these grunt tasks on file change.
+		// -------------------------------------
 		watch: {
 			css: {
 				files: ['app/css/**/*.less'],
