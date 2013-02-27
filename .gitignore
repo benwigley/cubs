@@ -33,9 +33,9 @@ writable/
 
 # Build Folders
 # ---------------------------------
-/scripts
-/styles
-/img
+#/scripts
+#/styles
+#/img
 /tmp
 
 # Personal Config
