@@ -57,3 +57,14 @@ Append this block
 
 ## Done. View the app here
 	http://dev.vege.com
+
+# Building for Production
+
+## Grunt task
+	grunt p
+
+## Push
+	git push prod --all
+
+## Done. View the app here
+http://vegeapp.pagodabox.com/
