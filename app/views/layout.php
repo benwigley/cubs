@@ -13,10 +13,10 @@
 		<link rel="shortcut icon" href="<?php echo base_url('favicon.ico') ?>" type="image/x-icon" />
 
 		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url('css/main.css') ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url('styles/app.css') ?>" />
 
 		<!-- Modernizr should load just after css -->
-		<script type="text/javascript" src="<?php echo base_url('js/modernizr.js') ?>" /></script>
+		<script type="text/javascript" src="<?php echo base_url('scripts/modernizr.js') ?>" /></script>
 	</head>
 
 	<body>
@@ -50,18 +50,24 @@ if ($_SERVER['SERVER_ADDR'] !== "127.0.0.1")
 {
 ?>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="<?php echo base_url("js/jquery.min.js") ?>"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="<?php echo base_url("scripts/jquery.min.js") ?>"><\/script>')</script>
 <?
 }
 else
 {
 ?>
-		<script src="<?php echo base_url("js/jquery.min.js") ?>"></script>
+		<script src="<?php echo base_url("scripts/jquery.min.js") ?>"></script>
 <?php
 }
 ?>
-		<script type="text/javascript" src="<?php echo base_url('js/vendor.js') ?>" /></script>
-		<script type="text/javascript" src="<?php echo base_url('js/main.js') ?>" /></script>
-
+		<script type="text/javascript" src="<?php echo base_url('scripts/vendor.js') ?>" /></script>
+		<script type="text/javascript" src="<?php echo base_url('scripts/app.js') ?>" /></script>
+		<script type="text/javascript">
+		
+			// Start Backbone
+			(function() {
+				require('initialize');
+			})();
+		</script>
 	</body>
 </html>

@@ -1,0 +1,35 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// UTILITY MIXINS
+// --------------------------------------------------
+
+// Clearfix
+// --------
+.clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: "";
+		height: 0;
+		line-height: 0;
+		font-size: 0;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// CSS3 Properties
+// ---------------
+
+// Box sizing
+.box-sizing(@boxmodel) {
+	-webkit-box-sizing: @boxmodel;
+	   -moz-box-sizing: @boxmodel;
+	        box-sizing: @boxmodel;
+}

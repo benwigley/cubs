@@ -23,6 +23,16 @@ A simple lookup for planting times and info for various fruits and vegetables in
 ### Import the schema
 	mysql -u root -p < sql/schema.sql
 
+## Grundle
+	# Install Grunt
+	npm install -g grunt-cli
+
+	# Install local node modles
+	npm install
+
+	# Run the "watch" task
+	grunt w
+
 ## Create a new host (optional)
 
 Note: File paths may differ on windows.
@@ -32,17 +42,18 @@ Note: File paths may differ on windows.
 
 Append this line
 
-	127.0.0.1     dev.vege.com
+	127.0.0.1     dev.vege.co.nz
 
 #### Edit
 	/private/etc/apache2/extra/httpd-vhosts.conf
 
-Append this
+Append this block
 
 	<VirtualHost *:80>
-        ServerName dev.vege.com
-        DocumentRoot "/Users/{username}/Sites/vege-app"
-    </VirtualHost>
+	    ServerName dev.vege.co.nz
+	    DocumentRoot "/Users/ben/Sites/vege-app"
+	    ErrorLog "/Users/ben/Sites/vege-app/app/logs/apache.log"
+	</VirtualHost>
 
 ## Done. View the app here
 	http://dev.vege.com

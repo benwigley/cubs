@@ -1,0 +1,127 @@
+// 
+// Grid system.
+// --------------------------------------------------
+
+
+
+// .container class
+// -----------------------
+.container {
+	width: @containerWidth;
+	margin: 0 auto;
+}
+
+
+// .row class
+// -----------------------
+.row {
+	*zoom: 1;
+	.clearfix();
+}
+.row:before,
+.row:after {
+	display: table;
+	line-height: 0;
+	content: "";
+}
+.row:after {
+	clear: both;
+}
+
+
+// .span* class
+// -----------------------
+[class*="span"] {
+	float: left;
+	min-height: 1px;
+	.box-sizing(border-box);
+
+	&.span-sub-contents {
+		margin-left: -@contentPadding;
+	}
+
+	&.pull-right {
+		float: right;
+	}
+}
+
+// Takes up all the left over space on the page 
+.span-fill {
+	float: none;
+	display: block;
+	overflow: hidden;
+}
+
+// Ultility classes
+// ----------------
+// These act like normal .pull-right/.pull-left classes
+// with the difference that they will be made 100% on mobile.
+.span-left {
+	float: left;
+}
+.span-right {
+	float: right;
+}
+
+
+// Column classes (all fluid)
+// -----------------------------
+.span(@columns) {
+	width: (@spanWidthFluid * @columns);
+
+	&.span-center {
+		margin-left: (100% - (@spanWidthFluid * @columns)) / 2;
+		margin-right: (100% - (@spanWidthFluid * @columns)) / 2;
+	}
+}
+.input-span(@columns) {
+	padding-left: @inputPaddingXFluid !important;
+	padding-right: @inputPaddingXFluid !important;
+	width: (@spanWidthFluid * @columns) - (@inputPaddingXFluid * 2) !important;
+}
+.offset(@columns) {
+	margin-left: (@spanWidthFluid * @columns);
+}
+
+#grid {
+
+	.generate() {
+
+		// Span Loop
+		// -----------------------------
+		.spanX(@index) when (@index > 0) {
+
+		  (~".span@{index}") {
+		  	.span(@index);
+		  }
+
+		  (~"input.span@{index}") {
+		  	.input-span(@index);
+		  }
+
+		  .spanX(@index - 1);
+		}
+		.spanX(0) {}
+
+		// Offset Loop
+		// -----------------------------
+		.offsetX(@index) when (@index > 0) {
+
+		  (~".offset@{index}") {
+		  	.offset(@index);
+		  }
+
+		  .offsetX(@index - 1);
+		}
+		.offsetX(0) {}
+
+		// Generate .spanX and .offsetX
+		// -----------------------------
+		.spanX(@gridColumns);
+		.offsetX(@gridColumns);
+
+	}
+}
+
+#grid > .generate();
+
