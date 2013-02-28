@@ -222,7 +222,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('assets',	['copy:images', 'copy:css', 'copy:js']);
 
 	// Developement tasks
-	grunt.registerTask('default',	['clean', 'styles', 'scripts', 'uglify:vendor', 'assets']);
+	grunt.registerTask('default',	['clean:dev', 'styles', 'scripts', 'uglify:vendor', 'assets']);
 	grunt.registerTask('b',			['default']);
 	grunt.registerTask('w',			['b', 'livereload', 'watch']);
 
