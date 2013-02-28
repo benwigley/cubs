@@ -1,3 +1,6 @@
+var Application = require('application');
+
 $(function() {
-	return console.log("Initializing app...");
+	var app = new Application();
+	app.initialize();
 });
