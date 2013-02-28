@@ -1,0 +1,128 @@
+//
+// Responsive: Utility classes
+// Credit: Bootstrap
+// --------------------------------------------------
+
+
+// Hide from screenreaders and browsers
+// Credit: HTML5 Boilerplate
+.hidden {
+	display: none;
+	visibility: hidden;
+}
+
+// Default - All devices
+// ---------------------
+
+// Visibility utilities
+.visible-phone		{ display: none !important; }
+.visible-tablet		{ display: none !important; }
+.hidden-phone		{ }
+.hidden-tablet		{ }
+.hidden-desktop		{ display: none !important; }
+.visible-desktop	{ display: inherit !important; }
+
+
+// Type utilities
+// -------------------
+// Note: Do not use these in combination
+//		with the visibility helpers
+.set-block {
+		display: block !important;
+		float: none !important;
+		width: 100% !important;
+}
+.set-inline-block { display: inline-block !important; }
+.set-inline { display: inline !important; }
+
+
+
+
+// Tablets & small desktops only
+// ----------------------------------
+// This max-width value corresponds to @containerWidth
+@media (min-width: 581px) and (max-width: 1140px) {
+	// Hide everything else
+	.hidden-desktop		{ display: inherit !important; }
+	.visible-desktop	{ display: none !important ; }
+	// Show
+	.visible-tablet		{ display: inherit !important; }
+	// Hide
+	.hidden-tablet		{ display: none !important; }
+
+
+	// Display Types
+	// -------------------
+	.set-block-tablet {
+		.set-block();
+	}
+	.set-inline-block-tablet {
+		.set-inline-block();
+	}
+	.set-inline-tablet {
+		.set-inline();
+	}
+
+	// Centering
+	.center-block-tablet {
+		.center-block();
+	}
+	.center-inline-block-tablet {
+		.center-inline-block();
+	}
+
+	// Floats
+	.pull-left-tablet {
+		float: left;
+	}
+	.pull-right-tablet {
+		float: right;
+	}
+}
+
+// Phones only
+// ----------------------------------
+@media (max-width: 580px) {
+	// Hide everything else
+	.hidden-desktop		{ display: inherit !important; }
+	.visible-desktop	{ display: none !important; }
+	// Show
+	.visible-phone		{ display: inherit !important; } // Use inherit to restore previous behavior
+	// Hide
+	.hidden-phone		{ display: none !important; }
+
+	
+	// Display Types
+	// -------------------
+	.set-block-phone {
+		.set-block();
+	}
+	.set-inline-block-phone {
+		.set-inline-block();
+	}
+	.set-inline-phone {
+		.set-inline();
+	}
+
+	// Centering
+	.center-block-phone {
+		.center-block();
+	}
+	.center-inline-block-phone {
+		.center-inline-block();
+	}
+
+	// Floats
+	.pull-left-phone {
+		float: left;
+	}
+	.pull-right-phone {
+		float: right;
+	}
+
+	// Grid utilites
+	.span-left,
+	.span-right {
+		width: 100%;
+	}
+}

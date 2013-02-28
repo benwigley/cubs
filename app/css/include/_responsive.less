@@ -1,0 +1,44 @@
+//
+// Responsive
+// --------------------------------------------------
+
+// Smaller than container width
+// ----------------------------------
+// As media queries do not take variables, 
+// Media Query max-widths must change whenever 
+// the @containerWidth variable is changed.
+@media (max-width: 1140px) {
+	
+	.container {
+		width: 100%;
+	}
+}
+
+// Everything but phones
+// ----------------------------------
+@media (min-width: 581px) {
+
+}
+
+
+// Phones only
+// ----------------------------------
+@media (max-width: 580px) {
+
+	// Grid
+	// -----------------
+	.container,
+	[class*="span"] {
+		width: 100% !important;
+		margin-bottom: 20px;
+
+		&.span-center {
+			margin-right: 0;
+			margin-left: 0;
+			// overflow: hidden;
+		}
+	}
+	input[class*="span"] {
+		width: (@spanWidthFluid * @gridColumns) - (@inputPaddingXFluid * 2) !important;
+	}
+}

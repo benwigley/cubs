@@ -22,7 +22,7 @@
 		
 		<div id="page">
 
-			<div id="masthead-container" class="navbar navbar-static-top">
+			<div id="masthead-container">
 				<div id="masthead" class="container">
 				</div>
 			</div>
