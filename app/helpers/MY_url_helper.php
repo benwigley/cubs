@@ -13,7 +13,7 @@
 function assets_url($uri = '')
 {
 	$CI 	=& get_instance();
-	$prefix =  ($_SERVER['IS_LOCALHOST'] ? ASSETS_DIR : '');
+	$prefix =  ($_SERVER['IS_LOCALHOST'] ? '' : ASSETS_DIR);
 
-	return $CI->config->base_url($uri);
+	return $CI->config->base_url($prefix.$uri);
 }
