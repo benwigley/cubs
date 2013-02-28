@@ -23,7 +23,7 @@ web1:
 
   # PHP specific settings#
   php_version: 5.3.8
-  php_extensions: ["mysql""]
+  php_extensions: ["mysql"]
   php_date_timezone: Pacific/Auckland
   php_max_execution_time: 30
   php_max_input_time: 60
