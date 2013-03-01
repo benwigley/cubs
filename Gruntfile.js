@@ -99,7 +99,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-
 		// Compile all LESS files.
 		// -------------------------------------
 		less: {
@@ -110,6 +109,20 @@ module.exports = function(grunt) {
 				},
 				files: {
 					"styles/app.css": "app/css/app.less"
+				}
+			}
+		},
+
+		// Compile all Stylus files.
+		// -------------------------------------
+		stylus: {
+			prod: {
+				options: {
+					paths: ["app/css"],
+					compress: false
+				},
+				files: {
+					"styles/app.css": "app/css/app.styl"
 				}
 			}
 		},
@@ -208,6 +221,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-mincss');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-livereload');
