@@ -1,28 +1,28 @@
 {
-  "author": "Ben & Gerwin",
-  "name": "Vege",
-  "title": "Vege",
-  "description": "vege.com",
-  "version": "0.0.1",
-  "homepage": "https://vege.com",
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "dependencies": {
-    "underscore": "1.4.2"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.0rc7",
-    "grunt-commonjs-handlebars": "0.1.0rc7",
-    "grunt-commonjs": "0.1.0rc7",
-    "grunt-contrib-copy": "0.4.0rc7",
-    "grunt-contrib-clean": "~0.4.0rc6",
-    "grunt-contrib-less": "0.5.0rc7",
-    "grunt-contrib-mincss": "0.4.0rc7",
-    "grunt-contrib-stylus": "0.4.0rc7",
-    "grunt-contrib-uglify": "~0.1.1rc6",
-    "grunt-contrib-watch": "~0.2.0rc7",
-    "grunt-livereload": "~0.1.1"
-  }
+	"author": "Ben & Gerwin",
+	"name": "Vege",
+	"title": "Vege",
+	"description": "vege.com",
+	"version": "0.0.1",
+	"homepage": "https://vege.com",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"dependencies": {
+		"underscore": "1.4.2"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.0",
+		"grunt-commonjs-handlebars": "0.1.0rc7",
+		"grunt-commonjs": "~0.2.0rc7",
+		"grunt-contrib-copy": "~0.4.0",
+		"grunt-contrib-clean": "~0.4.0",
+		"grunt-contrib-less": "~0.5.0",
+		"grunt-contrib-mincss": "0.4.0rc7",
+		"grunt-contrib-stylus": "~0.4.1",
+		"grunt-contrib-uglify": "~0.1.2",
+		"grunt-contrib-watch": "~0.3.1",
+		"grunt-livereload": "~0.1.3"
+	}
 }
