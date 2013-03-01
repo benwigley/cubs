@@ -12,6 +12,7 @@ Stack:
 Other:
 * [Grunt] (http://gruntjs.com/) as a build tool
 * [CodeIgniter Rest Server] (https://github.com/philsturgeon/codeigniter-restserver) by Phil Stergeon
+* [PhpMyAdmin] (http://www.phpmyadmin.net) for managing the database
 
 # Installation
 
