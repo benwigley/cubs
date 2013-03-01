@@ -1,3 +1,3 @@
-<h1>Hello Veggies!</h1>
+<h1>Hello World!</h1>
 
-<p>Some body text</p>
+<p>You are sucessfully running the <a href="https://github.com/benwigley2/cubs">cubs application framework</a>.</p>
