@@ -33,6 +33,7 @@ module.exports = function(grunt) {
 		// Copies assets from app/assets
 		// -------------------------------------
 		copy: {
+			// Application js
 			appjs: {
 				files: [{
 					expand: true,
@@ -42,6 +43,7 @@ module.exports = function(grunt) {
 					filter: 'isFile'
 				}]
 			},
+			// Assets
 			images: {
 				files: [{
 					expand: true,
@@ -69,7 +71,7 @@ module.exports = function(grunt) {
 					filter: 'isFile'
 				}]
 			},
-			// Copies the JS and CSS files for production
+			// Copies assets over for production
 			prodjs: {
 				files: [{
 					expand: true,
@@ -236,14 +238,16 @@ module.exports = function(grunt) {
 	grunt.registerTask('assets',	['copy:images', 'copy:css', 'copy:js']);
 
 	// Developement tasks
-	grunt.registerTask('default',	['clean:dev', 'styles', 'scripts', 'uglify:vendor', 'assets']);
+	grunt.registerTask('default',	[
+		'clean:dev', 'styles', 'scripts', 'uglify:vendor', 'assets'
+	]);
 	grunt.registerTask('b',			['default']);
 	grunt.registerTask('w',			['b', 'livereload', 'watch']);
 
 	// Production task
 	grunt.registerTask('prod',		[
-		'b', 'mincss', 'uglify:minify','clean:prod',
-		'copy:prodjs', 'copy:prodcss', 'copy:prodimages'
+		'b', 'mincss', 'uglify:minify',
+		'clean:prod', 'copy:prodjs', 'copy:prodcss', 'copy:prodimages'
 	]);
 	grunt.registerTask('p',			['prod']);
 
