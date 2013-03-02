@@ -15,7 +15,7 @@
 	"devDependencies": {
 		"grunt": "~0.4.0",
 		"grunt-commonjs-handlebars": "0.1.0rc7",
-		"grunt-commonjs": "~0.2.0rc7",
+		"grunt-commonjs": "0.1.0rc7",
 		"grunt-contrib-copy": "~0.4.0",
 		"grunt-contrib-clean": "~0.4.0",
 		"grunt-contrib-less": "~0.5.0",
