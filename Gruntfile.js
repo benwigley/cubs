@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 					expand: true,
 					cwd: 'app/js',
 					src: ['**'],
-					dest: 'tmp/js/',
+					dest: 'tmp/',
 					filter: 'isFile'
 				}]
 			},
@@ -144,9 +144,22 @@ module.exports = function(grunt) {
 		// -------------------------------------
 		commonjs: {
 			modules: {
-				excludeBase: 'tmp/js/',
-				src: ['tmp/**/*.js'],
-				dest: 'tmp/'
+				cwd: 'tmp/',
+				dest: 'tmp/',
+				src: ['**/*.js', '!templates/**/*.js', 'templates/helpers/*.js']
+			}
+		},
+
+		// Compile handlebars templates.
+		// -------------------------------------
+		// Not used yet.
+		handlebars: {
+			prod: {
+				expand: true,
+				cwd: 'app/js/templates/',
+				dest: 'tmp/templates/',
+				src: '**/*.hbs',
+				ext: '.js'
 			}
 		},
 
@@ -160,7 +173,7 @@ module.exports = function(grunt) {
 			},
 			app: {
 				files: {
-					'scripts/app.js': ['tmp/js/**/*.js']
+					'scripts/app.js': ['tmp/**/*.js']
 				}
 			},
 			vendor: {
