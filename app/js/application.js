@@ -1,12 +1,12 @@
-Router = require('router');
 var Application;
+var Router = require('router');
+var View = require('base/view');
 
 module.exports = Application = (function()
 {
 	function Application() {}
 
 	_.extend(Application.prototype, {
-
 
 		/*
 			Initialize the componenets of the application.
@@ -32,7 +32,7 @@ module.exports = Application = (function()
 		*/
 		initLayout: function()
 		{
-			console.log('calling initLayout');
+			console.log('Initializing application layout');
 		}
 
 	});
