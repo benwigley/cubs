@@ -1,13 +1,26 @@
-vege-app
-========
+Cubs
+====
 
-A simple lookup for planting times and info for various fruits and vegetables in your location.
+Cubs is a CodeIgniter Application Framework.
 
+Stack:
+* [CodeIgniter] (http://ellislab.com/codeigniter)
+* [Underscore] (http://underscorejs.org/)
+* [Backbone] (http://backbonejs.org/)
+* [Stylus] (http://learnboost.github.com/stylus/) (or [LESS] (http://lesscss.org/))
+
+Other:
+* [Grunt] (http://gruntjs.com/) as a build tool
+* [CodeIgniter Rest Server] (https://github.com/philsturgeon/codeigniter-restserver) by Phil Stergeon
+* [PhpMyAdmin] (http://www.phpmyadmin.net) for managing the database
+
+
+# Installation
 
 # Development environment
 
 ## Clone repo
-	git clone git@github.com:Gerwinnz/vege-app.git
+	git clone git@github.com:benwigley/cubs.git
 
 ## Database
 
@@ -20,10 +33,11 @@ A simple lookup for planting times and info for various fruits and vegetables in
 	$db['default']['username'] = 'root';
 	$db['default']['password'] = 'yourpassword';
 
-### Import the schema
-	mysql -u root -p < sql/schema.sql
+## Grunt
+First install [node] (http://nodejs.org/)
 
-## Grundle
+Then enter the following commands into terminal
+
 	# Install Grunt
 	npm install -g grunt-cli
 
@@ -33,38 +47,14 @@ A simple lookup for planting times and info for various fruits and vegetables in
 	# Run the "watch" task
 	grunt w
 
-## Create a new host (optional)
+To build the app without running the watch task, use
+	
+	grunt b
 
-Note: File paths may differ on windows.
-
-#### Edit
-	/etc/hosts
-
-Append this line
-
-	127.0.0.1     dev.vege.co.nz
-
-#### Edit
-	/private/etc/apache2/extra/httpd-vhosts.conf
-
-Append this block
-
-	<VirtualHost *:80>
-	    ServerName dev.vege.co.nz
-	    DocumentRoot "/Users/ben/Sites/vege-app"
-	    ErrorLog "/Users/ben/Sites/vege-app/app/logs/apache.log"
-	</VirtualHost>
-
-## Done. View the app here
-	http://dev.vege.com
+## Done. View the app on localhost
+	http://127.0.0.1/cubs
 
 # Building for Production
 
 ## Grunt task
 	grunt p
-
-## Push
-	git push prod --all
-
-## Done. View the app here
-http://vegeapp.pagodabox.com/
