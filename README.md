@@ -51,6 +51,18 @@ To build the app without running the watch task, use
 	
 	grunt b
 
+## Apache config
+
+### Trun on mod_rewrite for CodeIgniter
+Edit this file
+	
+	httpd.conf
+
+Uncomment this line
+
+	LoadModule rewrite_module modules/mod_rewrite.so
+
+
 ## Done. View the app on localhost
 	http://127.0.0.1/cubs
 
