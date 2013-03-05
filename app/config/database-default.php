@@ -54,7 +54,7 @@ if ($_SERVER['IS_LOCALHOST'])
 	$db['default']['hostname'] = '127.0.0.1';
 	$db['default']['username'] = 'root';
 	$db['default']['password'] = 'yourpassword';
-	$db['default']['database'] = 'vegedatabase';
+	$db['default']['database'] = 'yourdatabase';
 }
 else
 {
