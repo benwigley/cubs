@@ -51,7 +51,7 @@ To build the app without running the watch task, use
 
 ## Apache config
 
-### Trun on mod_rewrite for CodeIgniter
+### Turn on mod_rewrite for CodeIgniter
 #### Edit
 	# Mac OSX
 	/etc/apache2/httpd.conf
