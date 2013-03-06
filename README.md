@@ -34,9 +34,7 @@ Other:
 	$db['default']['password'] = 'yourpassword';
 
 ## Grunt
-First install [node] (http://nodejs.org/)
-
-Then enter the following commands into terminal
+Make sure you have [node] (http://nodejs.org/) installed before running these commands:
 
 	# Install Grunt
 	npm install -g grunt-cli
@@ -54,19 +52,23 @@ To build the app without running the watch task, use
 ## Apache config
 
 ### Trun on mod_rewrite for CodeIgniter
-Edit this file
+#### Edit
+	# Mac OSX
+	/etc/apache2/httpd.conf
 	
-	httpd.conf
+	# WAMP
+	c:/wamp/bin/apache/apache2.22/conf/httpd.conf
+	
 
-Uncomment this line
+Make sure this line is uncommented
 
 	LoadModule rewrite_module modules/mod_rewrite.so
 
 
-## Done. View the app on localhost
+### Done. View the app on localhost
 	http://127.0.0.1/cubs
 
 # Building for Production
 
-## Grunt task
+### Grunt task
 	grunt p
