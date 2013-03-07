@@ -40,4 +40,4 @@ writable/
 
 # Personal Config
 # ---------------------------------
-app/config/database.php
+/app/config/database.php
