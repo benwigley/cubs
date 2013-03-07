@@ -11,8 +11,10 @@ Stack:
 
 Other:
 * [Grunt] (http://gruntjs.com/) as a build tool
+* [Bootstrap] (https://github.com/twitter/bootstrap/)
+* [IcoMoon] (http://icomoon.io//) font icons
 * [CodeIgniter Rest Server] (https://github.com/philsturgeon/codeigniter-restserver) by Phil Stergeon
-* [PhpMyAdmin] (http://www.phpmyadmin.net) for managing the database
+* [PhpMyAdmin] (http://www.phpmyadmin.net) for managing MySQL database
 
 
 # Installation

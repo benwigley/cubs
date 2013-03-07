@@ -23,13 +23,30 @@
 	}
 }
 
+// IE7 inline-block
+// ----------------
+.ie7-inline-block() {
+	*display: inline; /* IE7 inline-block hack */
+	*zoom: 1;
+}
+
 
 // CSS3 Properties
 // ---------------
+// Add these as you need them
 
 // Box sizing
 .box-sizing(@boxmodel) {
 	-webkit-box-sizing: @boxmodel;
 	   -moz-box-sizing: @boxmodel;
 	        box-sizing: @boxmodel;
+}
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+.text-overflow(@state: ellipsis;) {
+	-ms-text-overflow: @state;
+	-o-text-overflow: @state;
+	text-overflow: @state;
 }
