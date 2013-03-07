@@ -1,17 +1,19 @@
 
-CREATE DATABASE IF NOT EXISTS vegedatabase;
-USE vegedatabase;
+CREATE DATABASE IF NOT EXISTS mydatabase;
+USE mydatabase;
 
 
-DROP TABLE IF EXISTS species;
-CREATE TABLE species(
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users(
 	id int auto_increment PRIMARY KEY NOT NULL,
-	name char(50) NOT NULL,
-	description TEXT NOT NULL,
-	FULLTEXT (description)
+	email char(80) NOT NULL,
+	username char(50) NOT NULL,
+	full_name char(50) NOT NULL,
+	passhash char(60) NOT NULL
 ) ENGINE = MyISAM;
-
-CREATE UNIQUE INDEX index_species_name ON species(name);
+CREATE UNIQUE INDEX index_user_email ON users(email);
+CREATE UNIQUE INDEX index_user_username ON users(username);
 
 
 
