@@ -22,7 +22,8 @@ if ( ! isset($_SERVER['APP_ENV'])) {
 
 // IS_LOCALHOST
 // ---------------------
-$_SERVER['IS_LOCALHOST'] = ($_SERVER['SERVER_ADDR'] === "127.0.0.1" ? TRUE : FALSE);
+$whitelist = array("0.0.0.0", "127.0.0.1");
+$_SERVER['IS_LOCALHOST'] = (in_array($_SERVER['SERVER_ADDR'], $whitelist) ? TRUE : FALSE);
 
 
 /*
