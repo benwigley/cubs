@@ -35,8 +35,6 @@ class MY_Model extends CI_Model
 	 */
 	function _set_pkg($resource)
 	{
-		echo "num rows";
-		echo $resource->num_rows();
 		if ($resource && $resource->num_rows() > 0) {
 			$this->result['pkg'] = $resource->result_array();
 			return true;
