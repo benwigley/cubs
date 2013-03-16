@@ -10,8 +10,8 @@ module.exports = api = function(options) {
 	// Note: You can still supply success and error handlers.
 	// They will be called by the Handler functions below.
 	var params = _.extend({}, config.ajax.options, options, {
-		dataType: $('html').hasClass('lt-ie10') ? 'jsonp' : 'json',
-		url: ("//" + (config.api_host()) + config.api_path) + options.url,
+		dataType: 'json',
+		url: ("//" + (config.api_host + config.api_path) + options.url),
 		success: null,
 		error: null
 	});
