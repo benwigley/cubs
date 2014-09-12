@@ -3,7 +3,7 @@ Cubs
 
 Cubs is a CodeIgniter Application Framework.
 
-Note: I have moved to using Laravel as my frame work of choise so this reposistory will no longer be actively developed.
+Note: I have moved to using Laravel as my framework of choise so this reposistory will no longer be actively developed.
 
 Stack:
 * [CodeIgniter] (http://ellislab.com/codeigniter)
